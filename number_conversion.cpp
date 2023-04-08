@@ -36,5 +36,33 @@ int main () {
         cout << octal[i];
     }
     cout << "\n.....................................\n";
+    //changing decimal to hexadecimal
+int hexrem,hexcount=0,hexa[32],nhex=num;
+     for(int i=0; nhex != 0;i++){
+        hexrem = nhex%16;
+        nhex/=16;
+        hexa[i]=hexrem;
+        hexcount++;
+    }
+     cout << "The corrosponding Hexadecimal number is: ";
+    for(int i=hexcount-1;i>=0;i--){
+     switch(hexa[i]){
+       case 10:cout<<"A";
+         break;
+       case 11:cout<<"B";
+         break;
+       case 12:cout<<"C";
+         break;
+       case 13:cout<<"D";
+         break;
+       case 14:cout<<"E";
+         break;
+       case 15:cout<<"F";
+         break;
+      default:
+         cout<<hexa[i];
+     } 
+    }
+    cout << "\n.....................................\n\n";
     return 0;
 }
