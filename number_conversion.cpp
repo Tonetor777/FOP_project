@@ -64,5 +64,20 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
      } 
     }
     cout << "\n.....................................\n\n";
+         //CONVERSION From BINARY
+    //binary to decimal
+    int bisum = 0, binum, digit, power = 0; 
+    cout << "Enter the Binary number\n"; 
+    cin >> binum; 
+    int biocnum = binum,bihexnum=binum, biocsum; 
+    while ( binum != 0) {
+         digit = binum % 10;
+         binum /= 10;  
+         bisum = bisum + (digit * pow (2, power));
+         power ++;  
+        }
+        cout<<"The corrosponding decimal number is: ";
+        cout << bisum; 
+     cout << "\n.....................................\n";
     return 0;
 }
