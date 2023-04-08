@@ -134,5 +134,33 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
    
 }
  cout << "\n.....................................\n\n";
+  //CONVERSION From OCTAL 
+ int octnum,count=0,rem,oct_digit, binary[16][16],ocsum = 0, pwr=0,ch=0;
+    cout<<"Enter the octal number\n"; 
+    cin >> octnum; 
+    int octdec = octnum;
+    int octhex = octnum; 
+ // changing octal to binary
+     cout<<"The corrosponding binary number is: ";
+        for(int j=0;octnum>0;j++){
+             oct_digit = octnum % 10;
+
+            for(int i=0;i<3;i++){
+            rem = oct_digit % 2;
+            oct_digit/=2; 
+            binary[j][i]=rem;
+            }
+            count++;
+            octnum/=10;
+            if(octnum==0){
+                for(int j=count-1;j>=0;j--){
+                   for (int i = 2; i >=0 ; i-- ) {
+                     cout << binary[j][i] ;  
+                    }  
+                }
+            }
+        }
+        cout<<endl; 
+     cout << ".....................................\n";
     return 0;
 }
