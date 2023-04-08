@@ -98,5 +98,41 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
         cout << ocbinum[i]; 
     } 
  cout << "\n.....................................\n";
+ // Binary to hexadecimal
+    int bihexsum=0,hcount=0,hex[32];
+    cout<<"The corrosponding hexadecimal number is: ";
+    int counthex=0;
+    for(int i=0;bihexnum!=0;i++){
+      while(hcount<4 && bihexnum!=0){
+          digit =bihexnum%10;
+          bihexsum = bihexsum + pow(2,hcount)*digit;
+          hcount++;
+          bihexnum/=10;
+        }
+      hex[i]=bihexsum;
+      hcount=0;
+      bihexsum=0;
+      counthex++;
+    }
+    for(int j=counthex-1;j>=0;j--){
+     switch(hex[j]){
+       case 10:cout<<"A";
+         break;
+      case 11:cout<<"B";
+         break;
+      case 12:cout<<"C";
+         break;
+      case 13:cout<<"D";
+         break;
+      case 14:cout<<"E";
+         break;
+     case 15:cout<<"F";
+         break;
+     default:
+         cout<<hex[j];
+ }
+   
+}
+ cout << "\n.....................................\n\n";
     return 0;
 }
