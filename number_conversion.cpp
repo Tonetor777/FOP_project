@@ -61,42 +61,42 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
          break;
       default:
          cout<<hexa[i];
-     } 
+     }
     }
     cout << "\n.....................................\n\n";
          //CONVERSION From BINARY
     //binary to decimal
-    int bisum = 0, binum, digit, power = 0; 
-    cout << "Enter the Binary number\n"; 
-    cin >> binum; 
-    int biocnum = binum,bihexnum=binum, biocsum; 
+    int bisum = 0, binum, digit, power = 0;
+    cout << "Enter the Binary number\n";
+    cin >> binum;
+    int biocnum = binum,bihexnum=binum, biocsum;
     while ( binum != 0) {
          digit = binum % 10;
-         binum /= 10;  
+         binum /= 10;
          bisum = bisum + (digit * pow (2, power));
-         power ++;  
+         power ++;
         }
         cout<<"The corrosponding decimal number is: ";
-        cout << bisum; 
+        cout << bisum;
      cout << "\n.....................................\n";
-      // binary to octal 
-    int ocbinum [8],ocount = 0; 
+      // binary to octal
+    int ocbinum [8],ocount = 0;
     for (int j = 0; biocnum != 0; j++) {
-        biocsum = 0;  
-        power = 0; 
+        biocsum = 0;
+        power = 0;
         for (int i = 0 ; i < 3; i++) {
          digit = biocnum % 10;
-         biocnum /= 10;  
+         biocnum /= 10;
          biocsum = biocsum + (digit * pow (2, power));
-         power ++; 
+         power ++;
          }
-        ocbinum [j] = biocsum; 
-        ocount++; 
+        ocbinum [j] = biocsum;
+        ocount++;
     }
     cout<<"The corrosponding octal number is: ";
      for (int i = ocount - 1; i >=0 ; i-- ) {
-        cout << ocbinum[i]; 
-    } 
+        cout << ocbinum[i];
+    }
  cout << "\n.....................................\n";
  // Binary to hexadecimal
     int bihexsum=0,hcount=0,hex[32];
@@ -131,15 +131,15 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
      default:
          cout<<hex[j];
  }
-   
+
 }
  cout << "\n.....................................\n\n";
-  //CONVERSION From OCTAL 
+  //CONVERSION From OCTAL
  int octnum,count=0,rem,oct_digit, binary[16][16],ocsum = 0, pwr=0,ch=0;
-    cout<<"Enter the octal number\n"; 
-    cin >> octnum; 
+    cout<<"Enter the octal number\n";
+    cin >> octnum;
     int octdec = octnum;
-    int octhex = octnum; 
+    int octhex = octnum;
  // changing octal to binary
      cout<<"The corrosponding binary number is: ";
         for(int j=0;octnum>0;j++){
@@ -147,7 +147,7 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
 
             for(int i=0;i<3;i++){
             rem = oct_digit % 2;
-            oct_digit/=2; 
+            oct_digit/=2;
             binary[j][i]=rem;
             }
             count++;
@@ -155,12 +155,22 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
             if(octnum==0){
                 for(int j=count-1;j>=0;j--){
                    for (int i = 2; i >=0 ; i-- ) {
-                     cout << binary[j][i] ;  
-                    }  
+                     cout << binary[j][i] ;
+                    }
                 }
             }
         }
-        cout<<endl; 
+        cout<<endl;
+     cout << ".....................................\n";
+      // changing octal to decimal
+    while ( octdec != 0) {
+         digit = octdec % 10;
+         ocsum = ocsum + (digit * pow(8, pwr));
+         pwr ++;
+         octdec /= 10;
+        }
+         cout<<"The corrosponding decimal number is: ";
+         cout << ocsum<<endl;
      cout << ".....................................\n";
     return 0;
 }
