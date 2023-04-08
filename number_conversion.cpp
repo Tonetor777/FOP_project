@@ -79,5 +79,24 @@ int hexrem,hexcount=0,hexa[32],nhex=num;
         cout<<"The corrosponding decimal number is: ";
         cout << bisum; 
      cout << "\n.....................................\n";
+      // binary to octal 
+    int ocbinum [8],ocount = 0; 
+    for (int j = 0; biocnum != 0; j++) {
+        biocsum = 0;  
+        power = 0; 
+        for (int i = 0 ; i < 3; i++) {
+         digit = biocnum % 10;
+         biocnum /= 10;  
+         biocsum = biocsum + (digit * pow (2, power));
+         power ++; 
+         }
+        ocbinum [j] = biocsum; 
+        ocount++; 
+    }
+    cout<<"The corrosponding octal number is: ";
+     for (int i = ocount - 1; i >=0 ; i-- ) {
+        cout << ocbinum[i]; 
+    } 
+ cout << "\n.....................................\n";
     return 0;
 }
