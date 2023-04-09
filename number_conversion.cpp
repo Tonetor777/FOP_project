@@ -217,5 +217,52 @@ if(ch==0){
     else
         cout<<"\nInvalid Octal Digit "<<digit<<endl;
      cout << "\n.....................................\n\n";
+      // CONVERSION FROM HEXA DECIMAL
+// Hexa_decimal to Decimal
+         char h_num [10]; 
+  int hexa_dec_sum = 0, length, hexa_digit; 
+  cout << "Enter the hexa deccimal number. Use capital letter for the letters\n"; 
+  cin >> h_num; 
+  length = strlen(h_num);
+  for (int i = 0; h_num [i] != '\0'; i++) {
+    length --; 
+    if (h_num[i] >= '0' && h_num [i] <= '9') 
+        hexa_digit = h_num [i] - 48;  
+    else if (h_num[i] >= 'A' && h_num [i] <= 'F')     
+        hexa_digit = h_num [i] - 55;  
+     hexa_dec_sum += hexa_digit * pow (16, length);
+  }
+cout << "The corrosponding decimal number is: " << hexa_dec_sum; 
+ cout << "\n.....................................\n";
+// Hexa decimal to binary 
+int hex_bi_count = 0, hex_bi_reminder, hexa_binary [32]; 
+int hex_bi = hexa_dec_sum;
+ for (int i = 0; hex_bi != 0; i++) {
+        hex_bi_reminder = hex_bi  % 2;  
+        hex_bi = hex_bi / 2;
+        hexa_binary[i] = hex_bi_reminder; 
+       hex_bi_count++;
+    }
+    cout << "The corrosponding Binary number is: ";
+   for (int i = hex_bi_count - 1; i >=0 ; i-- ) {
+        cout << hexa_binary[i];
+   }
+    cout << "\n.....................................\n";
+// Hexa decimal to octal 
+ int hex_oct_count = 0, hex_octal, hex_oct_rem, hexa_octal[32]; 
+    hex_octal =  hexa_dec_sum; 
+
+     for (int i = 0; hex_octal!= 0; i++) {
+        hex_oct_rem = hex_octal % 8;  
+        hex_octal = hex_octal/ 8;
+        hexa_octal[i] = hex_oct_rem; 
+        hex_oct_count++;
+    }
+       cout << "The corrosponding Octal number is: ";
+   for (int i = hex_oct_count - 1; i >=0 ; i-- ) {
+        cout << hexa_octal[i]; 
+    } 
+ cout << "\n.....................................\n"; 
+
     return 0;
 }
